@@ -16,3 +16,7 @@ def get_prices(tickers, start_date):
 
     prices = prices[tickers]
     return prices.dropna() 
+
+def get_returns(prices):
+    """Daily percentage change of each asset (simple returns)."""
+    return prices.pct_change().dropna()
